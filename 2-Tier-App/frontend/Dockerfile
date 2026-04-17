@@ -1,6 +1,8 @@
 # -------- Stage 1: Build React App --------
 FROM node:18-alpine AS build
 
+RUN echo "Front End Building"
+
 WORKDIR /app
 
 # Copy package files

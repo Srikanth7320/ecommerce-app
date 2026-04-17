@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-const BASE_URL = process.env.REACT_APP_API_URL;
+const BASE_URL = "/api";
 
 const Admin = () => {
   const [name, setName] = useState("");

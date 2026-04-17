@@ -4,14 +4,11 @@ FROM node:18-alpine
 # Set working directory inside container
 WORKDIR /app
 
-# Install dumb-init for proper signal handling
-RUN apk add --no-cache dumb-init
-
 # Copy package files first (for better Docker layer caching)
 COPY package*.json ./
 
-# Install dependencies (production only, skip devDependencies)
-RUN npm ci --only=production --no-optional && npm cache clean --force
+# Install dependencies
+RUN npm install --omit=dev && npm cache clean --force
 
 # Copy application source code
 COPY . .
@@ -22,6 +19,5 @@ RUN mkdir -p uploads && chmod 755 uploads
 # Expose port 5000
 EXPOSE 5000
 
-# Use dumb-init to handle signals properly and start the app
-ENTRYPOINT ["dumb-init", "--"]
-CMD ["npm", "start"]
+#start the app
+CMD ["node", "server.js"]

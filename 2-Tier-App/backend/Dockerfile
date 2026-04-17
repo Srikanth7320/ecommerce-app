@@ -1,8 +1,6 @@
 # Use lightweight Node image
 FROM node:18-alpine
 
-RUN echo "Building Backend"
-
 # Set working directory
 WORKDIR /app
 

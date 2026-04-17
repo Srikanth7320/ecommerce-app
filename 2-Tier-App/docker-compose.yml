@@ -23,6 +23,8 @@ services:
   # -----------------------------
   frontend:
     build: ./frontend            # Build image using Dockerfile in frontend/
+    environment:
+      - REACT_APP_API_URL=http://13.216.211.9:5000/api
     container_name: ecommerce-frontend
 
     ports:

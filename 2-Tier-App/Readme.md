@@ -1,5 +1,4 @@
-2 Tier Ecommerce-App
-
+2 Tier Ecommerce-App built based on chatGPT for learning purpose of DevOps
 ecommerce-app/
 │
 ├── frontend/        → React app (UI)

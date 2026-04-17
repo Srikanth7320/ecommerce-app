@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-const BASE_URL = "/api";
+import { BASE_URL } from "../services/api";
 
 const Admin = () => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
 
   const addProduct = async () => {
-    await fetch("BASE_URL/products", {
+    await fetch(BASE_URL + "/products", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
